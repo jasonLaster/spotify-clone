@@ -2,7 +2,8 @@
 
 import { TopNav } from '@/components/top-nav'
 import { PlaylistCard } from '@/components/playlist-card'
-import { mockPlaylists, mockTracks, usePlayerStore } from '@/lib/store'
+import { ArtistCard } from '@/components/artist-card'
+import { mockPlaylists, mockTracks, mockArtists, usePlayerStore } from '@/lib/store'
 import { Play, Clock } from 'lucide-react'
 import Image from 'next/image'
 import { formatTime } from '@/lib/utils'
@@ -48,6 +49,22 @@ export default function Home() {
                   </div>
                 </button>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Popular Artists Section */}
+        <section className="mb-8">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-white">Popular artists</h2>
+            <button className="text-gray-400 hover:text-white text-sm font-medium">
+              Show all
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {mockArtists.map((artist) => (
+              <ArtistCard key={artist.id} artist={artist} />
             ))}
           </div>
         </section>

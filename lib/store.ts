@@ -19,6 +19,15 @@ export interface Playlist {
   createdBy: string
 }
 
+export interface Artist {
+  id: string
+  name: string
+  image: string
+  followers: number
+  genres: string[]
+  topTracks: Track[]
+}
+
 interface PlayerState {
   currentTrack: Track | null
   isPlaying: boolean
@@ -156,6 +165,49 @@ export const mockTracks: Track[] = [
     duration: 200,
     albumArt: 'https://picsum.photos/300/300?random=5',
     audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3'
+  }
+]
+
+export const mockArtists: Artist[] = [
+  {
+    id: '1',
+    name: 'The Weeknd',
+    image: 'https://picsum.photos/300/300?random=40',
+    followers: 42000000,
+    genres: ['Pop', 'R&B'],
+    topTracks: [mockTracks[0]]
+  },
+  {
+    id: '2',
+    name: 'Harry Styles',
+    image: 'https://picsum.photos/300/300?random=41',
+    followers: 38000000,
+    genres: ['Pop', 'Rock'],
+    topTracks: [mockTracks[1]]
+  },
+  {
+    id: '3',
+    name: 'Olivia Rodrigo',
+    image: 'https://picsum.photos/300/300?random=42',
+    followers: 15000000,
+    genres: ['Pop', 'Alternative'],
+    topTracks: [mockTracks[2]]
+  },
+  {
+    id: '4',
+    name: 'Taylor Swift',
+    image: 'https://picsum.photos/300/300?random=43',
+    followers: 55000000,
+    genres: ['Pop', 'Country'],
+    topTracks: [mockTracks[4]]
+  },
+  {
+    id: '5',
+    name: 'Dua Lipa',
+    image: 'https://picsum.photos/300/300?random=44',
+    followers: 32000000,
+    genres: ['Pop', 'Dance'],
+    topTracks: []
   }
 ]
 
