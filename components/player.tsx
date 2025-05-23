@@ -46,7 +46,7 @@ export function Player() {
         audioRef.current.play()
       }
     }
-  }, [currentTrack])
+  }, [currentTrack, isPlaying])
 
   useEffect(() => {
     if (audioRef.current) {

@@ -6,6 +6,7 @@ import { TopNav } from '@/components/top-nav'
 import { Play, Pause, Clock, MoreHorizontal, Heart, Download, Share } from 'lucide-react'
 import { mockPlaylists, usePlayerStore } from '@/lib/store'
 import { formatTime } from '@/lib/utils'
+import { use } from 'react'
 
 interface PlaylistPageProps {
   params: Promise<{
@@ -13,8 +14,8 @@ interface PlaylistPageProps {
   }>
 }
 
-export default async function PlaylistPage({ params }: PlaylistPageProps) {
-  const { id } = await params
+export default function PlaylistPage({ params }: PlaylistPageProps) {
+  const { id } = use(params)
   const playlist = mockPlaylists.find(p => p.id === id)
 
   if (!playlist) {

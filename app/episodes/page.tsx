@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { TopNav } from '@/components/top-nav'
 import { Download, Play, MoreHorizontal } from 'lucide-react'
 
@@ -72,10 +73,11 @@ export default function EpisodesPage() {
                 className="flex items-center space-x-4 p-4 rounded-lg hover:bg-white/10 transition-colors group"
               >
                 <div className="relative w-24 h-24 bg-gray-800 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
+                  <Image
                     src={episode.image}
                     alt={episode.show}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <button className="bg-white text-black p-2 rounded-full hover:scale-105 transition-transform">
